@@ -1,3 +1,3 @@
-# Lintly CI
+# Lintly
 
-Welcome to the Lintly CI documentation!
+Welcome to the Lintly documentation!

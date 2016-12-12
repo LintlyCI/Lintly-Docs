@@ -6,3 +6,6 @@ site_description: Documentation for Lintly
 site_author: Grant McConnaughey
 copyright: Lintly
 theme: cinder
+pages:
+  - Home: 'index.md'
+  - Notifications: 'notifications.md'
