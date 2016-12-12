@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Lintly\n\n\nWelcome to the Lintly documentation!", 
+            "text": "Lintly\n\n\nWelcome to the Lintly documentation!\n\n\nSupported Languages\n\n\nLintly currently supports \nPython 2 only\n. There are plans to add support for more languages in the future,\nbut Python 3 support will need to come first.\n\n\nAuthentication and Permissions\n\n\nLintly uses GitHub OAuth tokens to authenticate users. These tokens will also be used to pull data\nfrom GitHub when the user is browsing around on Lintly. Therefore, if a user does not have access to\nyour repo in GitHub then they will not have access in Lintly.\n\n\nThis extends to Admin users as well. Admins of a repo in GitHub will be admins in Lintly. Admins can\nperform the following actions in Lintly:\n\n\n\n\nImport repos from GitHub into Lintly\n\n\nRemove repos from Lintly\n\n\nUpdate settings\n\n\n\n\nNotifications\n\n\nLintly can be configured to send notifications when a pull request reduces code quality by a certain percentage.\n\n\nSlack Notifications\n\n\nTo setup Slack notifications you will first need to create a new Integration in Slack. To do that,\ngo to your Slack installation at \nhttps://{yourteam}.slack.com\n. Next...\n\n\n\n\nClick Apps \n Integrations.\n\n\nIn the top right corner of the page, click Manage \n Make a Custom Integration \n Incoming WebHooks.\n\n\nChoose the channel you would like notifications posted to and click \"Add Incoming WebHooks Integration\".\n\n\nOn the next page, copy the Webhook URL. This is what you will add to Lintly.\n\n\n\n\nNow go back over to lintly.com. From here, follow these steps:\n\n\n\n\nGo to the project you would like to configure Slack notifications for.\n\n\nClick Settings\n\n\nUnder Notifications, click Slack\n\n\nEnter your webhook URL, check the Enabled checkbox, and change the channel to something appropriate (e.g., \n#general\n or \n#code-quality\n).\n\n\nClick Save Settings\n\n\n\n\nEmail Notifications\n\n\nTo setup Email notifications, navigate to the project in Lintly and...\n\n\n\n\nClick Settings\n\n\nUnder Notifications, click Email\n\n\nEnter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.\n\n\nClick Save Settings\n\n\n\n\nFrequently Asked Questions\n\n\nHow do I add new users to Lintly?\n\n\nLintly uses GitHub APIs to authorize users, so there is no need to explicitly add a user in Lintly.\nIf the user has read access to the repo in GitHub then they will have access in Lintly.\n\n\nHow is the code quality score calculated?\n\n\nCode Quality = Lines of Code with Issues / Total Lines Of Code * 100.0", 
             "title": "Home"
         }, 
         {
@@ -11,24 +11,44 @@
             "title": "Lintly"
         }, 
         {
-            "location": "/notifications/", 
-            "text": "Notifications\n\n\nLintly can be configured to send notifications when a pull request reduces code quality by a certain percentage.\n\n\nSlack Notifications\n\n\nTo setup Slack notifications you will first need to create a new Integration in Slack. To do that,\ngo to your Slack installation at \nhttps://{yourteam}.slack.com\n. Next...\n\n\n\n\nClick Apps \n Integrations.\n\n\nIn the top right corner of the page, click Manage \n Make a Custom Integration \n Incoming WebHooks.\n\n\nChoose the channel you would like notifications posted to and click \"Add Incoming WebHooks Integration\".\n\n\nOn the next page, copy the Webhook URL. This is what you will add to Lintly.\n\n\n\n\nNow go back over to lintly.com. From here, follow these steps:\n\n\n\n\nGo to the project you would like to configure Slack notifications for.\n\n\nClick Settings\n\n\nUnder Notifications, click Slack\n\n\nEnter your webhook URL, check the Enabled checkbox, and change the channel to something appropriate (e.g., \n#general\n or \n#code-quality\n).\n\n\nClick Save Settings\n\n\n\n\nEmail Notifications\n\n\nTo setup Email notifications, navigate to the project in Lintly and...\n\n\n\n\nClick Settings\n\n\nUnder Notifications, click Email\n\n\nEnter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.\n\n\nClick Save Settings", 
-            "title": "Notifications"
+            "location": "/#supported-languages", 
+            "text": "Lintly currently supports  Python 2 only . There are plans to add support for more languages in the future,\nbut Python 3 support will need to come first.", 
+            "title": "Supported Languages"
         }, 
         {
-            "location": "/notifications/#notifications", 
+            "location": "/#authentication-and-permissions", 
+            "text": "Lintly uses GitHub OAuth tokens to authenticate users. These tokens will also be used to pull data\nfrom GitHub when the user is browsing around on Lintly. Therefore, if a user does not have access to\nyour repo in GitHub then they will not have access in Lintly.  This extends to Admin users as well. Admins of a repo in GitHub will be admins in Lintly. Admins can\nperform the following actions in Lintly:   Import repos from GitHub into Lintly  Remove repos from Lintly  Update settings", 
+            "title": "Authentication and Permissions"
+        }, 
+        {
+            "location": "/#notifications", 
             "text": "Lintly can be configured to send notifications when a pull request reduces code quality by a certain percentage.", 
             "title": "Notifications"
         }, 
         {
-            "location": "/notifications/#slack-notifications", 
+            "location": "/#slack-notifications", 
             "text": "To setup Slack notifications you will first need to create a new Integration in Slack. To do that,\ngo to your Slack installation at  https://{yourteam}.slack.com . Next...   Click Apps   Integrations.  In the top right corner of the page, click Manage   Make a Custom Integration   Incoming WebHooks.  Choose the channel you would like notifications posted to and click \"Add Incoming WebHooks Integration\".  On the next page, copy the Webhook URL. This is what you will add to Lintly.   Now go back over to lintly.com. From here, follow these steps:   Go to the project you would like to configure Slack notifications for.  Click Settings  Under Notifications, click Slack  Enter your webhook URL, check the Enabled checkbox, and change the channel to something appropriate (e.g.,  #general  or  #code-quality ).  Click Save Settings", 
             "title": "Slack Notifications"
         }, 
         {
-            "location": "/notifications/#email-notifications", 
+            "location": "/#email-notifications", 
             "text": "To setup Email notifications, navigate to the project in Lintly and...   Click Settings  Under Notifications, click Email  Enter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.  Click Save Settings", 
             "title": "Email Notifications"
+        }, 
+        {
+            "location": "/#frequently-asked-questions", 
+            "text": "", 
+            "title": "Frequently Asked Questions"
+        }, 
+        {
+            "location": "/#how-do-i-add-new-users-to-lintly", 
+            "text": "Lintly uses GitHub APIs to authorize users, so there is no need to explicitly add a user in Lintly.\nIf the user has read access to the repo in GitHub then they will have access in Lintly.", 
+            "title": "How do I add new users to Lintly?"
+        }, 
+        {
+            "location": "/#how-is-the-code-quality-score-calculated", 
+            "text": "Code Quality = Lines of Code with Issues / Total Lines Of Code * 100.0", 
+            "title": "How is the code quality score calculated?"
         }
     ]
 }
