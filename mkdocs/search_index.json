@@ -1,0 +1,14 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Lintly CI\n\n\nWelcome to the Lintly CI documentation!", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#lintly-ci", 
+            "text": "Welcome to the Lintly CI documentation!", 
+            "title": "Lintly CI"
+        }
+    ]
+}
