@@ -1,0 +1,10 @@
+site_name: Lintly
+site_url: https://lintlyci.github.io/Lintly-Docs/
+repo_url: https://github.com/LintlyCI/Lintly-Docs/
+repo_name: GitHub
+site_description: Documentation for Lintly
+site_author: Grant McConnaughey
+copyright: Lintly
+remote_branch: master
+remote_name: master
+theme: cinder
