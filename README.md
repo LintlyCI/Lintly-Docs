@@ -1,6 +1,8 @@
 # Lintly-Docs
 
-Documentation for [Lintly.com](lintly.com). [View Docs](https://lintlyci.github.io/Lintly-Docs/)
+Documentation for [Lintly.com](lintly.com).
+
+View the docs at [https://lintlyci.github.io/Lintly-Docs/](https://lintlyci.github.io/Lintly-Docs/).
 
 ## Building the documentation
 
