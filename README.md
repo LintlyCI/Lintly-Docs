@@ -1,11 +1,11 @@
 # Lintly-Docs
 
-Documentation for Lintly.com
+Documentation for [Lintly.com](lintly.com). [View Docs](https://lintlyci.github.io/Lintly-Docs/)
 
 ## Building the documentation
 
-1. `pip install -r requirements.txt`
-2. Run `mkdocs serve`
+1. Install dependencies: `pip install -r requirements.txt`
+2. Start the server: `mkdocs serve`
 3. Go to http://127.0.0.1:8000 in your browser
 
 ## Deploying documentation
