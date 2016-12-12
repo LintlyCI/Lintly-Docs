@@ -20,6 +20,9 @@
     <link href="../css/cinder.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/highlight.css">
 
+
+    <link href="../lintly.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -132,7 +135,7 @@
         <div class="col-md-9" role="main">
 
 <h1 id="notifications">Notifications</h1>
-<p>Lintly can be configured to send notifications when a PR reduces code quality by a certain amount.</p>
+<p>Lintly can be configured to send notifications when a pull request reduces code quality by a certain percentage.</p>
 <h2 id="slack-notifications">Slack Notifications</h2>
 <p>To setup Slack notifications you will first need to create a new Integration in Slack. To do that,
 go to your Slack installation at <code>https://{yourteam}.slack.com</code>. Next...</p>
@@ -145,12 +148,19 @@ go to your Slack installation at <code>https://{yourteam}.slack.com</code>. Next
 <p>Now go back over to lintly.com. From here, follow these steps:</p>
 <ol>
 <li>Go to the project you would like to configure Slack notifications for.</li>
-<li>Click Settings.</li>
-<li>Under Notifications, click Slack.</li>
+<li>Click Settings</li>
+<li>Under Notifications, click Slack</li>
 <li>Enter your webhook URL, check the Enabled checkbox, and change the channel to something appropriate (e.g., <code>#general</code> or <code>#code-quality</code>).</li>
-<li>Click Save Settings.</li>
+<li>Click Save Settings</li>
 </ol>
-<h2 id="email-notifications">Email Notifications</h2></div>
+<h2 id="email-notifications">Email Notifications</h2>
+<p>To setup Email notifications, navigate to the project in Lintly and...</p>
+<ol>
+<li>Click Settings</li>
+<li>Under Notifications, click Email</li>
+<li>Enter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.</li>
+<li>Click Save Settings</li>
+</ol></div>
         
     </div>
 
