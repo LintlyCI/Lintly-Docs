@@ -10,6 +10,11 @@ Documentation for Lintly.com
 
 ## Deploying documentation
 
+Lintly documentation is deployed to GitHub Pages. To deploy, run the following:
+
 ```
 $> mkdocs gh-deploy
 ```
+
+This will build the documentation, copy the build to the `gh-pages` branch, and push the `gh-pages`
+branch to GitHub.
