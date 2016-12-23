@@ -20,6 +20,31 @@ perform the following actions in Lintly:
 * Remove repos from Lintly
 * Update settings
 
+## Configuration
+
+Lintly uses the Python tool [flake8](http://flake8.readthedocs.io/en/latest/) under the hood. Therefore,
+flake8 configuration files will work with Lintly as well. Changing the configuration will affect which
+violations count against your code quality score. To change the configuration, add either a `.flake8`,
+`setup.cfg`, or `tox.ini` file to the root directory of your repo. [Read more about flake8 configuration here](http://flake8.readthedocs.io/en/latest/user/configuration.html).
+
+### Default configuration
+
+If your project does not have a flake8 configuration file then Lintly will add one for you. The following
+is the default flake8 config file that Lintly provides:
+
+```
+[flake8]
+# Be a little more relaxed than the PEP8 79 character limit
+max-line-length = 100
+max-complexity = 10
+# Only check Python files
+filename = *.py
+format = default
+# Don't count against Django's generated migration files
+exclude =
+    */migrations/*
+```
+
 ## Notifications
 
 Lintly can be configured to send notifications when a pull request reduces code quality by a certain percentage.
