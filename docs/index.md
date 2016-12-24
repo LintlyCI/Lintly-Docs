@@ -36,10 +36,16 @@ is the default flake8 config file that Lintly provides:
 [flake8]
 # Be a little more relaxed than the PEP8 79 character limit
 max-line-length = 100
+
+# McCabe complexity max
 max-complexity = 10
+
 # Only check Python files
 filename = *.py
+
+# Lintly requires the default format
 format = default
+
 # Don't count against Django's generated migration files
 exclude =
     */migrations/*
