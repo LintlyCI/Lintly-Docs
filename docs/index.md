@@ -20,6 +20,32 @@ perform the following actions in Lintly:
 * Remove repos from Lintly
 * Update settings
 
+### GitHub API tokens
+
+Lintly uses GitHub API tokens to interact with GitHub. The following tokens are used in Lintly:
+
+**The currently logged in user**
+
+* All API requests that occur while logged into Lintly.com. This includes determining repository permissions,
+importing projects, and viewing file contents.
+
+**The project's [authorized user](#project-authorized-users)**
+
+* All API requests that occur during automatic builds, except for PR comments/reviews.
+
+**[lintly-bot](https://github.com/lintly-bot)**
+
+* Commenting or creating a pull request review during automatic builds on public repositories.
+
+### Project authorized users
+
+The authorized user of a project is the user whose API tokens will be used during automatic builds.
+This is initially set as the user who imported the project into Lintly.
+
+**Note:**  Some organizations may have a bot account whose API tokens should be used during automatic
+builds and when commenting on pull requests. Soon there will be a way to specify who your project's
+authorized user is.
+
 ## Linter Configuration
 
 Lintly uses the Python tool [flake8](http://flake8.readthedocs.io/en/latest/) under the hood. Therefore,
