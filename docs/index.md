@@ -20,7 +20,7 @@ perform the following actions in Lintly:
 * Remove repos from Lintly
 * Update settings
 
-## Configuration
+## Linter Configuration
 
 Lintly uses the Python tool [flake8](http://flake8.readthedocs.io/en/latest/) under the hood. Therefore,
 flake8 configuration files will work with Lintly as well. Changing the configuration will affect which
