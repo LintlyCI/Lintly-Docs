@@ -2,7 +2,7 @@
 
 Documentation for [Lintly.com](lintly.com).
 
-View the docs at [https://lintlyci.github.io/Lintly-Docs/](https://lintlyci.github.io/Lintly-Docs/).
+View the docs at [http://docs.lintly.com](http://docs.lintly.com).
 
 ## Building the documentation
 
