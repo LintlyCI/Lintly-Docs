@@ -108,6 +108,17 @@ To setup Email notifications, navigate to the project in Lintly and...
 3. Enter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.
 4. Click Save Settings
 
+## Project Badges
+
+Project badges are a handy way to show the current code quality percentage of your app. This is what
+they look like:
+
+![Code Quality badge](https://img.shields.io/badge/lintly-100%-brightgreen.svg)
+
+To create your badge, go to your project in Lintly. In the top-right corner is your project badge.
+Clicking on that will take you to the project badges page. From here, copy the Markdown, HTML, or RST
+and paste it in your README file.
+
 ## Frequently Asked Questions
 
 ### How do I add new users to Lintly?
