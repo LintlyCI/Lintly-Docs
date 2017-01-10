@@ -124,11 +124,19 @@
                 <li class="third-level"><a href="#default-configuration">Default configuration</a></li>
             
         
+            <li class="second-level"><a href="#pull-requests">Pull Requests</a></li>
+            
+                <li class="third-level"><a href="#enabling-pull-request-reviews">Enabling Pull Request Reviews</a></li>
+            
+        
             <li class="second-level"><a href="#notifications">Notifications</a></li>
             
                 <li class="third-level"><a href="#slack-notifications">Slack Notifications</a></li>
             
                 <li class="third-level"><a href="#email-notifications">Email Notifications</a></li>
+            
+        
+            <li class="second-level"><a href="#project-badges">Project Badges</a></li>
             
         
             <li class="second-level"><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
@@ -206,6 +214,23 @@ exclude =
     */migrations/*
 </code></pre>
 
+<h2 id="pull-requests">Pull Requests</h2>
+<p>When a pull request is opened on GitHub, Lintly will get notified via a web hook and begin linting the changes. If there are any violations found then Lintly will comment on the pull request. There are two ways that Lintly can comment on pull requests:</p>
+<ol>
+<li><a href="https://help.github.com/articles/about-pull-request-reviews/">Pull request reviews</a> (comment on individual lines)</li>
+<li>A single comment with all violations</li>
+</ol>
+<p>Lintly's GitHub bot account (<a href="https://github.com/lintly-bot">lintly-bot</a>) will first attempt to create a pull request review. With a pull request review, the pull request will receive a comment on each line that has a code quality violation. If <strong>lintly-bot</strong> does not have permission to create a pull request review on your repo then it will fall back to creating one pull request comment that contains all violations.</p>
+<h3 id="enabling-pull-request-reviews">Enabling Pull Request Reviews</h3>
+<p>Due to <a href="https://help.github.com/articles/permission-levels-for-a-user-account-repository/">a restriction in the GitHub API</a>, <strong>lintly-bot</strong> must be invited to be a collaborator on your repository before it can create a pull request review. Follow these steps to invite <strong>lintly-bot</strong> to be a collaborator:</p>
+<ol>
+<li>Go to your repo in GitHub</li>
+<li>Click Settings</li>
+<li>Click Collaborators</li>
+<li>Enter the name <code>lintly-bot</code> into the search bar</li>
+<li>Click Add Collaborator</li>
+</ol>
+<p>This will send an invitation to <strong>lintly-bot</strong>. These invitations must be accepted manually, so please allow a few hours for the invitation to be accepted.</p>
 <h2 id="notifications">Notifications</h2>
 <p>Lintly can be configured to send notifications when a pull request reduces code quality by a certain percentage.</p>
 <h3 id="slack-notifications">Slack Notifications</h3>
@@ -233,6 +258,13 @@ go to your Slack installation at <code>https://{yourteam}.slack.com</code>. Next
 <li>Enter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.</li>
 <li>Click Save Settings</li>
 </ol>
+<h2 id="project-badges">Project Badges</h2>
+<p>Project badges are a handy way to show the current code quality percentage of your app. This is what
+they look like:</p>
+<p><img alt="Code Quality badge" src="https://img.shields.io/badge/lintly-100%-brightgreen.svg" /></p>
+<p>To create your badge, go to your project in Lintly. In the top-right corner is your project badge.
+Clicking on that will take you to the project badges page. From here, copy the Markdown, HTML, or RST
+and paste it in your README file.</p>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <h3 id="how-do-i-add-new-users-to-lintly">How do I add new users to Lintly?</h3>
 <p>Lintly uses GitHub APIs to authorize users, so there is no need to explicitly add a user in Lintly.
@@ -293,5 +325,5 @@ If the user has read access to the repo in GitHub then they will have access in 
 
 <!--
 MkDocs version : 0.16.0
-Build Date UTC : 2017-01-06 22:21:24
+Build Date UTC : 2017-01-10 13:52:09
 -->
