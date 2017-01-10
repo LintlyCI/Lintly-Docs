@@ -46,6 +46,11 @@ This is initially set as the user who imported the project into Lintly.
 builds and when commenting on pull requests. Soon there will be a way to specify who your project's
 authorized user is.
 
+## Build Configuration
+
+Individual builds can be configured using a file called `lintly.yml`. This file should be at the top
+level of the project.
+
 ## Linter Configuration
 
 Lintly uses the Python tool [flake8](http://flake8.readthedocs.io/en/latest/) under the hood. Therefore,
