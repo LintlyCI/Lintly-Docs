@@ -77,6 +77,27 @@ exclude =
     */migrations/*
 ```
 
+## Pull Requests
+
+When a pull request is opened on GitHub, Lintly will get notified via a web hook and begin linting the changes. If there are any violations found then Lintly will comment on the pull request. There are two ways that Lintly can comment on pull requests:
+
+1. [Pull request reviews](https://help.github.com/articles/about-pull-request-reviews/) (comment on individual lines)
+2. A single comment with all violations
+
+Lintly's GitHub bot account ([lintly-bot](https://github.com/lintly-bot)) will first attempt to create a pull request review. With a pull request review, the pull request will receive a comment on each line that has a code quality violation. If **lintly-bot** does not have permission to create a pull request review on your repo then it will fall back to creating one pull request comment that contains all violations.
+
+### Enabling Pull Request Reviews
+
+Due to [a restriction in the GitHub API](https://help.github.com/articles/permission-levels-for-a-user-account-repository/), **lintly-bot** must be invited to be a collaborator on your repository before it can create a pull request review. Follow these steps to invite **lintly-bot** to be a collaborator:
+
+1. Go to your repo in GitHub
+2. Click Settings
+3. Click Collaborators
+4. Enter the name `lintly-bot` into the search bar
+5. Click Add Collaborator
+
+This will send an invitation to **lintly-bot**. These invitations must be accepted manually, so please allow a few hours for the invitation to be accepted.
+
 ## Notifications
 
 Lintly can be configured to send notifications when a pull request reduces code quality by a certain percentage.
