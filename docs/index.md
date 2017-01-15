@@ -4,8 +4,8 @@ Welcome to the Lintly documentation!
 
 ## Supported Languages
 
-Lintly currently supports **Python 2 only**. There are plans to add support for more languages in the future,
-but Python 3 support will need to come first.
+Lintly currently supports **Python 2.7 and 3.6**. There are plans to add support for more languages in
+the future. If you would like to request a language or linter then please create a [feature request here](https://github.com/LintlyCI/Lintly-Issues/issues).
 
 ## Authentication and Permissions
 
@@ -48,8 +48,26 @@ authorized user is.
 
 ## Build Configuration
 
-Individual builds can be configured using a file called `lintly.yml`. This file should be at the top
-level of the project.
+Builds can be configured by adding a file named `lintly.yml` to root of your project.
+
+### Default configuration
+
+Lintly uses the following default configuration for builds:
+
+```yaml
+python:
+  version: 2
+```
+
+### Python 3 configuration
+
+Add the following configuration to your `lintly.yml` file to make Lintly lint your project using
+Python 3.6.
+
+```yaml
+python:
+  version: 3
+```
 
 ## Linter Configuration
 
