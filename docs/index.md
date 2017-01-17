@@ -55,8 +55,9 @@ Builds can be configured by adding a file named `lintly.yml` to root of your pro
 Lintly uses the following default configuration for builds:
 
 ```yaml
-python:
-  version: 2
+languages:
+  python:
+    version: 2
 ```
 
 ### Python 3 configuration
@@ -65,9 +66,34 @@ Add the following configuration to your `lintly.yml` file to make Lintly lint yo
 Python 3.6.
 
 ```yaml
-python:
-  version: 3
+languages:
+  python:
+    version: 3
 ```
+
+### Custom bot accounts
+
+You can use the API tokens from your own bot accounts to retrieve PR diffs, comment on PRs, create PR
+reviews, and create [commit statuses](https://developer.github.com/v3/repos/statuses/). This will save
+the API tokens on your personal account from being used to much and potentially being rate-limited by
+GitHub.
+
+Before adding a custom bot, **ensure that the bot account has collaborator access to your repository**
+in GitHub. This is a security feature to ensure the bot account you're using really does have the
+appropriate access to the repo.
+
+To add a custom bot to Lintly, first login into Lintly with the bot account. You need to do this so
+that Lintly will have access to the bot's API token. Next, add the following YAML to your `lintly.yml`
+file (substituting `{bot_username}` with the GitHub username of your bot):
+
+```yaml
+lintly:
+  bot: {bot_username}
+```
+
+With custom bot accounts you will **now have commit statuses and pull request reviews in your pull
+requests**. Commit statuses only work with custom bots, as the default lintly-bot account likely won't
+have collaborator access to create them.
 
 ## Linter Configuration
 
