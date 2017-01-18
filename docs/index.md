@@ -2,6 +2,9 @@
 
 Welcome to the Lintly documentation!
 
+If you need clarification on any documentation then please
+[create an issue here](https://github.com/LintlyCI/Lintly-Issues/issues).
+
 ## Supported Languages
 
 Lintly currently supports **Python 2.7 and 3.6**. There are plans to add support for more languages in
@@ -31,11 +34,17 @@ importing projects, and viewing file contents.
 
 **The project's [authorized user](#project-authorized-users)**
 
-* All API requests that occur during automatic builds, except for PR comments/reviews.
+* All API requests that occur during automatic builds (except for PR comments/reviews) **unless a custom
+bot is specified**.
 
 **[lintly-bot](https://github.com/lintly-bot)**
 
-* Commenting or creating a pull request review during automatic builds on public repositories.
+* Commenting or creating a pull request review during automatic builds on public repositories **unless
+a custom bot is specified**.
+
+**[Custom bot](#custom-bot-accounts)**
+
+* All API requests
 
 ### Project authorized users
 
@@ -55,6 +64,9 @@ Builds can be configured by adding a file named `lintly.yml` to root of your pro
 Lintly uses the following default configuration for builds:
 
 ```yaml
+lintly:
+  bot: null
+
 languages:
   python:
     version: 2
