@@ -7,7 +7,7 @@ If you need clarification on any documentation then please
 
 ## Supported Languages
 
-Lintly currently supports **Python 2.7 and 3.6** and **JavaScript**.
+Lintly currently supports **Python 2 and 3** and **JavaScript**.
 
 If you would like to request a language or linter then please create a [feature request here](https://github.com/LintlyCI/Lintly-Issues/issues).
 
@@ -133,7 +133,7 @@ With custom bot accounts you will **now have commit statuses and pull request re
 requests**. Commit statuses only work with custom bots, as the default lintly-bot account likely won't
 have collaborator access to create them.
 
-## Linter Configuration
+## Python configuration
 
 Lintly uses the Python tool [flake8](http://flake8.readthedocs.io/en/latest/) under the hood. Therefore,
 flake8 configuration files will work with Lintly as well. Changing the configuration will affect which
@@ -162,6 +162,27 @@ format = default
 # Don't count against Django's generated migration files
 exclude =
     */migrations/*
+```
+
+## JavaScript configuration
+
+Lintly uses [ESLint](http://eslint.org) to lint JavaScript. Regular [ESLint configuration](eslint.org/docs/user-guide/configuring)
+will work with Lintly as well.
+
+### Default configuration
+
+If your project does not have an ESLint configuration file then Lintly will add one for you. The following
+is the default ESLint config file that Lintly provides:
+
+```json
+{
+    "rules": {},
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "extends": "eslint:recommended"
+}
 ```
 
 ## Pull Requests
