@@ -123,14 +123,21 @@
             
                 <li class="third-level"><a href="#default-configuration">Default configuration</a></li>
             
+                <li class="third-level"><a href="#enabling-linters">Enabling linters</a></li>
+            
                 <li class="third-level"><a href="#python-3-configuration">Python 3 configuration</a></li>
             
                 <li class="third-level"><a href="#custom-bot-accounts">Custom bot accounts</a></li>
             
         
-            <li class="second-level"><a href="#linter-configuration">Linter Configuration</a></li>
+            <li class="second-level"><a href="#python-configuration">Python configuration</a></li>
             
                 <li class="third-level"><a href="#default-configuration_1">Default configuration</a></li>
+            
+        
+            <li class="second-level"><a href="#javascript-configuration">JavaScript configuration</a></li>
+            
+                <li class="third-level"><a href="#default-configuration_2">Default configuration</a></li>
             
         
             <li class="second-level"><a href="#pull-requests">Pull Requests</a></li>
@@ -165,8 +172,8 @@
 <p>If you need clarification on any documentation then please
 <a href="https://github.com/LintlyCI/Lintly-Issues/issues">create an issue here</a>.</p>
 <h2 id="supported-languages">Supported Languages</h2>
-<p>Lintly currently supports <strong>Python 2.7 and 3.6</strong>. There are plans to add support for more languages in
-the future. If you would like to request a language or linter then please create a <a href="https://github.com/LintlyCI/Lintly-Issues/issues">feature request here</a>.</p>
+<p>Lintly currently supports <strong>Python 2 and 3</strong> and <strong>JavaScript</strong>.</p>
+<p>If you would like to request a language or linter then please create a <a href="https://github.com/LintlyCI/Lintly-Issues/issues">feature request here</a>.</p>
 <h2 id="authentication-and-permissions">Authentication and Permissions</h2>
 <p>Lintly uses GitHub OAuth tokens to authenticate users. These tokens will also be used to pull data
 from GitHub when the user is browsing around on Lintly. Therefore, if a user does not have access to
@@ -217,6 +224,24 @@ languages:
     version: 2
 </code></pre>
 
+<h3 id="enabling-linters">Enabling linters</h3>
+<p>You can enable and disable linters in the <code>lintly.yml</code> file using the following structure:</p>
+<pre><code class="yaml">linters:
+  eslint:
+    enabled: true
+  flake8:
+    enabled: true
+</code></pre>
+
+<p>If you specify linters in your config file then Lintly will only use those. Otherwise, Lintly will
+use a <a href="#default-linters">default set of linters</a>.</p>
+<h4 id="default-linters">Default linters</h4>
+<p>If you do not specify which linters you would like to use then Lintly will make an educated guess.
+The default linters are determined based on the languages your code is written in. Lintly will lint
+any language that makes up at least 25% of your codebase at the time you enable the project in Lintly.</p>
+<p>For example, if your project is made up of 75% Python, 15% JavaScript, and 10% HTML then Lintly will
+only lint Python. If your project is made up of 40% Python, 40% JavaScript, and 20% HTML then Lintly
+will lint both Python and JavaScript.</p>
 <h3 id="python-3-configuration">Python 3 configuration</h3>
 <p>Add the following configuration to your <code>lintly.yml</code> file to make Lintly lint your project using
 Python 3.6.</p>
@@ -243,7 +268,7 @@ file (substituting <code>{bot_username}</code> with the GitHub username of your 
 <p>With custom bot accounts you will <strong>now have commit statuses and pull request reviews in your pull
 requests</strong>. Commit statuses only work with custom bots, as the default lintly-bot account likely won't
 have collaborator access to create them.</p>
-<h2 id="linter-configuration">Linter Configuration</h2>
+<h2 id="python-configuration">Python configuration</h2>
 <p>Lintly uses the Python tool <a href="http://flake8.readthedocs.io/en/latest/">flake8</a> under the hood. Therefore,
 flake8 configuration files will work with Lintly as well. Changing the configuration will affect which
 violations count against your code quality score. To change the configuration, add either a <code>.flake8</code>,
@@ -267,6 +292,22 @@ format = default
 # Don't count against Django's generated migration files
 exclude =
     */migrations/*
+</code></pre>
+
+<h2 id="javascript-configuration">JavaScript configuration</h2>
+<p>Lintly uses <a href="http://eslint.org">ESLint</a> to lint JavaScript. Regular <a href="./eslint.org/docs/user-guide/configuring">ESLint configuration</a>
+will work with Lintly as well.</p>
+<h3 id="default-configuration_2">Default configuration</h3>
+<p>If your project does not have an ESLint configuration file then Lintly will add one for you. The following
+is the default ESLint config file that Lintly provides:</p>
+<pre><code class="json">{
+    &quot;rules&quot;: {},
+    &quot;env&quot;: {
+        &quot;es6&quot;: true,
+        &quot;browser&quot;: true
+    },
+    &quot;extends&quot;: &quot;eslint:recommended&quot;
+}
 </code></pre>
 
 <h2 id="pull-requests">Pull Requests</h2>
@@ -380,5 +421,5 @@ If the user has read access to the repo in GitHub then they will have access in 
 
 <!--
 MkDocs version : 0.16.0
-Build Date UTC : 2017-01-18 04:04:02
+Build Date UTC : 2017-01-24 04:16:11
 -->
