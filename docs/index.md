@@ -71,6 +71,22 @@ lintly:
 languages:
   python:
     version: 2
+
+notifications:
+  commit_status:
+    enabled: true
+  pr_comments:
+    enabled: true
+  email:
+    enabled: false
+    score_decreases_percentage: 0.5
+    addresses:
+      - youremail@here.com
+  slack:
+    enabled: false
+    score_decreases_percentage: 0.5
+    webhook_url: ""
+    channel: "#general"
 ```
 
 ### Enabling linters
@@ -220,22 +236,31 @@ go to your Slack installation at `https://{yourteam}.slack.com`. Next...
 3. Choose the channel you would like notifications posted to and click "Add Incoming WebHooks Integration".
 4. On the next page, copy the Webhook URL. This is what you will add to Lintly.
 
-Now go back over to lintly.com. From here, follow these steps:
+Now, add the webhook URL and channel to your `lintly.yml` file. **Note:** The `channel` attribute
+needs to be in quotes since the `#` character denotes comments in YAML`.
 
-1. Go to the project you would like to configure Slack notifications for.
-2. Click Settings
-3. Under Notifications, click Slack
-4. Enter your webhook URL, check the Enabled checkbox, and change the channel to something appropriate (e.g., `#general` or `#code-quality`).
-5. Click Save Settings
+```yaml
+notifications:
+  slack:
+    enabled: true
+    score_decreases_percentage: 0.5
+    webhook_url: {webhook_url}
+    channel: "#yourchannel"
+```
 
 ### Email Notifications
 
-To setup Email notifications, navigate to the project in Lintly and...
+To setup Email notifications, add the following configuration to your `lintly.yml` file:
 
-1. Click Settings
-2. Under Notifications, click Email
-3. Enter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.
-4. Click Save Settings
+```yaml
+notifications:
+  email:
+    enabled: true
+    score_decreases_percentage: 0.5
+    addresses:
+      - first_email@yourdomain.com
+      - another_email@yourdomain.com
+```
 
 ## Project Badges
 
