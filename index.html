@@ -222,6 +222,22 @@ authorized user is.</p>
 languages:
   python:
     version: 2
+
+notifications:
+  commit_status:
+    enabled: true
+  pr_comments:
+    enabled: true
+  email:
+    enabled: false
+    score_decreases_percentage: 0.5
+    addresses:
+      - youremail@here.com
+  slack:
+    enabled: false
+    score_decreases_percentage: 0.5
+    webhook_url: &quot;&quot;
+    channel: &quot;#general&quot;
 </code></pre>
 
 <h3 id="enabling-linters">Enabling linters</h3>
@@ -338,22 +354,27 @@ go to your Slack installation at <code>https://{yourteam}.slack.com</code>. Next
 <li>Choose the channel you would like notifications posted to and click "Add Incoming WebHooks Integration".</li>
 <li>On the next page, copy the Webhook URL. This is what you will add to Lintly.</li>
 </ol>
-<p>Now go back over to lintly.com. From here, follow these steps:</p>
-<ol>
-<li>Go to the project you would like to configure Slack notifications for.</li>
-<li>Click Settings</li>
-<li>Under Notifications, click Slack</li>
-<li>Enter your webhook URL, check the Enabled checkbox, and change the channel to something appropriate (e.g., <code>#general</code> or <code>#code-quality</code>).</li>
-<li>Click Save Settings</li>
-</ol>
+<p>Now, add the webhook URL and channel to your <code>lintly.yml</code> file. <strong>Note:</strong> The <code>channel</code> attribute
+needs to be in quotes since the <code>#</code> character denotes comments in YAML`.</p>
+<pre><code class="yaml">notifications:
+  slack:
+    enabled: true
+    score_decreases_percentage: 0.5
+    webhook_url: {webhook_url}
+    channel: &quot;#yourchannel&quot;
+</code></pre>
+
 <h3 id="email-notifications">Email Notifications</h3>
-<p>To setup Email notifications, navigate to the project in Lintly and...</p>
-<ol>
-<li>Click Settings</li>
-<li>Under Notifications, click Email</li>
-<li>Enter the email addresses you would like to receive emails (separated by a comma) and check the Enabled checkbox.</li>
-<li>Click Save Settings</li>
-</ol>
+<p>To setup Email notifications, add the following configuration to your <code>lintly.yml</code> file:</p>
+<pre><code class="yaml">notifications:
+  email:
+    enabled: true
+    score_decreases_percentage: 0.5
+    addresses:
+      - first_email@yourdomain.com
+      - another_email@yourdomain.com
+</code></pre>
+
 <h2 id="project-badges">Project Badges</h2>
 <p>Project badges are a handy way to show the current code quality percentage of your app. This is what
 they look like:</p>
@@ -421,5 +442,5 @@ If the user has read access to the repo in GitHub then they will have access in 
 
 <!--
 MkDocs version : 0.16.0
-Build Date UTC : 2017-01-24 04:16:11
+Build Date UTC : 2017-02-16 03:25:27
 -->
