@@ -13,20 +13,20 @@ If you would like to request a language or linter then please create a [feature 
 
 ## Authentication and Permissions
 
-Lintly uses GitHub OAuth tokens to authenticate users. These tokens will also be used to pull data
-from GitHub when the user is browsing around on Lintly. Therefore, if a user does not have access to
-your repo in GitHub then they will not have access in Lintly.
+Lintly uses OAuth tokens to authenticate users. These tokens will also be used to pull data from
+GitHub or GitLab when the user is browsing around on Lintly. Therefore, if a user does not have access to
+your repo in GitHub or GitLab then they will not have access in Lintly.
 
-This extends to Admin users as well. Admins of a repo in GitHub will be admins in Lintly. Admins can
-perform the following actions in Lintly:
+This extends to Admin users as well. Admins of a repo will be admins in Lintly. Admins can perform
+the following actions in Lintly:
 
-* Import repos from GitHub into Lintly
+* Import repos from GitHub or GitLab into Lintly
 * Remove repos from Lintly
 * Update settings
 
-### GitHub API tokens
+### GitHub/GitLab API tokens
 
-Lintly uses GitHub API tokens to interact with GitHub. The following tokens are used in Lintly:
+Lintly uses API tokens to interact with the GitHub/GitLab API. The following tokens are used in Lintly:
 
 **The currently logged in user**
 
@@ -203,7 +203,7 @@ is the default ESLint config file that Lintly provides:
 
 ## Pull Requests
 
-When a pull request is opened on GitHub, Lintly will get notified via a web hook and begin linting the changes. If there are any violations found then Lintly will comment on the pull request. There are two ways that Lintly can comment on pull requests:
+When a pull request is opened on GitHub or GitLab, Lintly will get notified via a web hook and begin linting the changes. If there are any violations found then Lintly will comment on the pull request. There are two ways that Lintly can comment on pull requests:
 
 1. [Pull request reviews](https://help.github.com/articles/about-pull-request-reviews/) (comment on individual lines)
 2. A single comment with all violations
@@ -277,8 +277,8 @@ and paste it in your README file.
 
 ### How do I add new users to Lintly?
 
-Lintly uses GitHub APIs to authorize users, so there is no need to explicitly add a user in Lintly.
-If the user has read access to the repo in GitHub then they will have access in Lintly.
+Lintly uses GitHub/GitLab APIs to authorize users, so there is no need to explicitly add a user in Lintly.
+If the user has read access to the repo in GitHub/GitLab then they will have access in Lintly.
 
 ### How is the code quality score calculated?
 
