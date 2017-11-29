@@ -7,9 +7,7 @@ If you need clarification on any documentation then please
 
 ## Supported Languages
 
-Lintly currently supports **Python 2 and 3** and **JavaScript**.
-
-If you would like to request a language or linter then please create a [feature request here](https://github.com/LintlyCI/Lintly-Issues/issues).
+Lintly supports **Python 2 and 3**.
 
 ## Authentication and Permissions
 
@@ -89,31 +87,6 @@ notifications:
     channel: "#general"
 ```
 
-### Enabling linters
-
-You can enable and disable linters in the `lintly.yml` file using the following structure:
-
-```yaml
-linters:
-  eslint:
-    enabled: true
-  flake8:
-    enabled: true
-```
-
-If you specify linters in your config file then Lintly will only use those. Otherwise, Lintly will
-use a [default set of linters](#default-linters).
-
-#### Default linters
-
-If you do not specify which linters you would like to use then Lintly will make an educated guess.
-The default linters are determined based on the languages your code is written in. Lintly will lint
-any language that makes up at least 25% of your codebase at the time you enable the project in Lintly.
-
-For example, if your project is made up of 75% Python, 15% JavaScript, and 10% HTML then Lintly will
-only lint Python. If your project is made up of 40% Python, 40% JavaScript, and 20% HTML then Lintly
-will lint both Python and JavaScript.
-
 ### Python 3 configuration
 
 Add the following configuration to your `lintly.yml` file to make Lintly lint your project using
@@ -178,27 +151,6 @@ format = default
 # Don't count against Django's generated migration files
 exclude =
     */migrations/*
-```
-
-## JavaScript configuration
-
-Lintly uses [ESLint](http://eslint.org) to lint JavaScript. Regular [ESLint configuration](eslint.org/docs/user-guide/configuring)
-will work with Lintly as well.
-
-### Default configuration
-
-If your project does not have an ESLint configuration file then Lintly will add one for you. The following
-is the default ESLint config file that Lintly provides:
-
-```json
-{
-    "rules": {},
-    "env": {
-        "es6": true,
-        "browser": true
-    },
-    "extends": "eslint:recommended"
-}
 ```
 
 ## Pull Requests
