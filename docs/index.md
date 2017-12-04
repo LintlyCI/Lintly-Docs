@@ -102,7 +102,7 @@ languages:
 
 You can use the API tokens from your own bot accounts to retrieve PR diffs, comment on PRs, create PR
 reviews, and create [commit statuses](https://developer.github.com/v3/repos/statuses/). This will save
-the API tokens on your personal account from being used to much and potentially being rate-limited by
+the API tokens on your personal account from being used too much and potentially being rate-limited by
 GitHub.
 
 Before adding a custom bot, **ensure that the bot account has collaborator access to your repository**
